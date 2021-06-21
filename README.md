@@ -2,7 +2,7 @@
 This is a simple Unity physics events emitter for Leopotam ECS framework.
 No more need to create MonoBehaviour scripts for physics events handling - just follow a few simple steps to do it with this tool.
 
-# Installation
+## Installation
 You can install this repository via Package Manager:
 
 `Package Manager -> Add package from git URL...`
@@ -14,12 +14,12 @@ https://github.com/supremestranger/leoecs-physics.git
 
 If you can't / don't want to use Package Manager or Git, you can just download the repository and add it to your project.
 
-# Checkers
+## Checkers
 `Checker` is a `MonoBehaviour` script that contains a specific Unity physics event method.
 
 You need to attach a concrete `Checker` to any `GameObject` that emits any Unity physics events.
 
-## All Checkers:
+### All Checkers:
 * `OnTriggerEnterChecker` - responsible for `OnTriggerEnter` event
 * `OnTriggerStayChecker` - responsible for `OnTriggerStay` event
 * `OnTriggerExitChecker` - responsible for `OnTriggerExit` event
@@ -132,7 +132,7 @@ private void Start()
     }
 ```
 
-# FAQ
+## FAQ
 ### I attached the Checker to GameObject, but it doesn't register any physics event
 Keep in mind that one of your `GameObjects` must have kinematic `Rigidbody` component attached.
 
