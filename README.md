@@ -31,7 +31,7 @@ You need to attach a concrete `Checker` to any `GameObject` that emits any Unity
 # Events
 When Unity Physics event is raised, the `EcsPhysicsEventsEmitter` creates a new entity-event with a specific component like `OnCollisionEnterEvent` or `OnTriggerStayEvent`.
 
-The component contains various amount on fields based on the event.
+The event component has various amount on fields based on the event.
 
 ### OnCollision
 ```csharp
