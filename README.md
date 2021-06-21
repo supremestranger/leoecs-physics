@@ -1,4 +1,4 @@
-# LeoECS physics
+# LeoECS Physics
 This is a simple Unity physics events emitter for Leopotam ECS framework.
 No more need to create MonoBehaviour scripts for physics events handling - just follow a few simple steps to do it with this tool.
 
@@ -111,3 +111,14 @@ private void Start()
         .Init();
     }
 ```
+
+# FAQ
+### I attached the Checker to GameObject, but it doesn't register any physics event
+Keep in mind that one of your `GameObjects` must have kinematic `Rigidbody` component attached.
+
+By the way, for `OnTrigger` and `OnControllerColliderHit` `CharacterController` component is OK.
+
+### Some of my events being registered multiple times
+This cannot be fixed as the event methods are called with Unity Physics engine, so you need to think how to fix it on your side.
+
+You can try to create some kind of Timer that is started when the event is raised and not handle new events while the timer is running.
