@@ -4,8 +4,7 @@ namespace LeoEcsPhysics
 {
     public struct OnCollisionStayEvent
     {
-        public GameObject thisGO;
-        public GameObject otherGO;
+        public GameObject senderGameObject;
         public Collision collisionData;
     }
 }

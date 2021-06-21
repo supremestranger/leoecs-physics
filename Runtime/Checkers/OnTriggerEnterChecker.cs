@@ -6,7 +6,7 @@ namespace LeoEcsPhysics
     {
         private void OnTriggerEnter(Collider other)
         { 
-            EcsPhysicsEventsEmitter.RegisterTriggerEnterEvent(gameObject, other.gameObject, other);
+            EcsPhysicsEventsEmitter.RegisterTriggerStayEvent(gameObject, other);
         }
     }
 }

@@ -4,8 +4,7 @@ namespace LeoEcsPhysics
 {
     public struct OnControllerColliderHitEvent
     {
-        public GameObject thisGO;
-        public GameObject otherGO;
+        public GameObject senderGameObject;
         public ControllerColliderHit hit;
     }
 }

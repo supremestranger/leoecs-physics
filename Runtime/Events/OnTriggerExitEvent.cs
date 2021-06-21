@@ -4,8 +4,7 @@ namespace LeoEcsPhysics
 {
     public struct OnTriggerExitEvent
     {
-        public GameObject thisGO;
-        public GameObject otherGO;
+        public GameObject senderGameObject;
         public Collider colliderData;
     }
 }
