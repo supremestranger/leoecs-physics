@@ -13,11 +13,11 @@ https://github.com/supremestranger/leoecs-physics.git
 If you can't / don't want to use Package Manage or Git, you can just download the repository and add to your project.
 
 # Checkers
-Checker is a `MonoBehaviour` script that contains a specific Unity physics event method.
+`Checker` is a `MonoBehaviour` script that contains a specific Unity physics event method.
 
-You need to attach a concrete Checker to any `GameObject` that emits any Unity physics events.
+You need to attach a concrete `Checker` to any `GameObject` that emits any Unity physics events.
 
-## Here is the list of all Checkers:
+## All Checkers:
 * `OnTriggerEnterChecker` - responsible for `OnTriggerEnter` event
 * `OnTriggerStayChecker` - responsible for `OnTriggerStay` event
 * `OnTriggerExitChecker` - responsible for `OnTriggerExit` event
@@ -89,6 +89,25 @@ public class TestSystem : IEcsRunSystem
 
             eventData.otherGO.SetActive(false);
          }
-     }
- }
+    }
+}
+ 
+```
+
+You can `OneFrame` some events if you want or you can use `OneFramePhysics()` for `OneFrame`'ing all events:
+```csharp
+private void Start()
+{
+    ecsWorld = new EcsWorld ();
+    ecsSystems = new EcsSystems (ecsWorld);
+    // initialization of emitter.
+    EcsPhysicsEventsEmitter.ecsWorld = ecsWorld;
+            
+    ecsSystems
+        // your systems
+        .Add(new TestSystem())
+        // oneframe all unity physics events.
+        .OneFramePhysics()
+        .Init();
+    }
 ```
