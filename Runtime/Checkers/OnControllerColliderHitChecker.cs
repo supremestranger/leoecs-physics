@@ -10,7 +10,7 @@ namespace LeoEcsPhysics
     {
         private void OnControllerColliderHit(ControllerColliderHit hit)
         {
-            EcsPhysicsEventsEmitter.RegisterControllerColliderHitEvent(gameObject, hit);
+            EcsPhysicsEventsEmitter.RegisterControllerColliderHitEvent(gameObject, hit.collider, hit.normal);
         }
     }
 }

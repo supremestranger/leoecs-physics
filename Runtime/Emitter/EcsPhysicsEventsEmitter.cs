@@ -9,60 +9,67 @@ namespace LeoEcsPhysics
     {
         public static EcsWorld ecsWorld;
 
-        public static void RegisterTriggerEnterEvent(GameObject thisGO, Collider colliderData)
+        public static void RegisterTriggerEnterEvent(GameObject senderGameObject, Collider collider)
         {
             var eventEntity = ecsWorld.NewEntity();
             ref var eventComponent = ref eventEntity.Get<OnTriggerEnterEvent>();
-            eventComponent.senderGameObject = thisGO;
-            eventComponent.colliderData = colliderData;
+            eventComponent.senderGameObject = senderGameObject;
+            eventComponent.collider = collider;
         }
 
-        public static void RegisterTriggerStayEvent(GameObject thisGO, Collider colliderData)
+        public static void RegisterTriggerStayEvent(GameObject senderGameObject, Collider collider)
         {
             var eventEntity = ecsWorld.NewEntity();
             ref var eventComponent = ref eventEntity.Get<OnTriggerStayEvent>();
-            eventComponent.senderGameObject = thisGO;
-            eventComponent.colliderData = colliderData;
+            eventComponent.senderGameObject = senderGameObject;
+            eventComponent.collider = collider;
         }
 
-        public static void RegisterTriggerExitEvent(GameObject thisGO, Collider colliderData)
+        public static void RegisterTriggerExitEvent(GameObject senderGameObject, Collider collider)
         {
             var eventEntity = ecsWorld.NewEntity();
             ref var eventComponent = ref eventEntity.Get<OnTriggerExitEvent>();
-            eventComponent.senderGameObject = thisGO;
-            eventComponent.colliderData = colliderData;
+            eventComponent.senderGameObject = senderGameObject;
+            eventComponent.collider = collider;
         }
 
-        public static void RegisterCollisionEnterEvent(GameObject thisGO, Collision collisionData)
+        public static void RegisterCollisionEnterEvent(GameObject senderGameObject, Collider collider, ContactPoint firstContactPoint, Vector3 relativeVelocity)
         {
             var eventEntity = ecsWorld.NewEntity();
             ref var eventComponent = ref eventEntity.Get<OnCollisionEnterEvent>();
-            eventComponent.senderGameObject = thisGO;
-            eventComponent.collisionData = collisionData;
+            eventComponent.senderGameObject = senderGameObject;
+            eventComponent.collider = collider;
+            eventComponent.firstContactPoint = firstContactPoint;
+            eventComponent.relativeVelocity = relativeVelocity;
         }
 
-        public static void RegisterCollisionStayEvent(GameObject thisGO, Collision collisionData)
+        public static void RegisterCollisionStayEvent(GameObject senderGameObject, Collider collider, ContactPoint firstContactPoint, Vector3 relativeVelocity)
         {
             var eventEntity = ecsWorld.NewEntity();
             ref var eventComponent = ref eventEntity.Get<OnCollisionStayEvent>();
-            eventComponent.senderGameObject = thisGO;
-            eventComponent.collisionData = collisionData;
+            eventComponent.senderGameObject = senderGameObject;
+            eventComponent.collider = collider;
+            eventComponent.firstContactPoint = firstContactPoint;
+            eventComponent.relativeVelocity = relativeVelocity;
         }
 
-        public static void RegisterCollisionExitEvent(GameObject thisGO, Collision collisionData)
+        public static void RegisterCollisionExitEvent(GameObject senderGameObject, Collider collider, ContactPoint firstContactPoint, Vector3 relativeVelocity)
         {
             var eventEntity = ecsWorld.NewEntity();
             ref var eventComponent = ref eventEntity.Get<OnCollisionExitEvent>();
-            eventComponent.senderGameObject = thisGO;
-            eventComponent.collisionData = collisionData;
+            eventComponent.senderGameObject = senderGameObject;
+            eventComponent.collider = collider;
+            eventComponent.firstContactPoint = firstContactPoint;
+            eventComponent.relativeVelocity = relativeVelocity;
         }
 
-        public static void RegisterControllerColliderHitEvent(GameObject thisGO, ControllerColliderHit hitData)
+        public static void RegisterControllerColliderHitEvent(GameObject senderGameObject, Collider collider, Vector3 hitNormal)
         {
             var eventEntity = ecsWorld.NewEntity();
             ref var eventComponent = ref eventEntity.Get<OnControllerColliderHitEvent>();
-            eventComponent.senderGameObject = thisGO;
-            eventComponent.hit = hitData;
+            eventComponent.senderGameObject = senderGameObject;
+            eventComponent.collider = collider;
+            eventComponent.hitNormal = hitNormal;
         }
     }
 }

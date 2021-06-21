@@ -5,6 +5,7 @@ namespace LeoEcsPhysics
     public struct OnControllerColliderHitEvent
     {
         public GameObject senderGameObject;
-        public ControllerColliderHit hit;
+        public Collider collider;
+        public Vector3 hitNormal;
     }
 }

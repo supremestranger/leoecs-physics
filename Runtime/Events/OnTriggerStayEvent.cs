@@ -5,6 +5,6 @@ namespace LeoEcsPhysics
     public struct OnTriggerStayEvent
     {
         public GameObject senderGameObject;
-        public Collider colliderData;
+        public Collider collider;
     }
 }

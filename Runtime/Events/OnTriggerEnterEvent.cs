@@ -5,6 +5,6 @@ namespace LeoEcsPhysics
     public struct OnTriggerEnterEvent
     {
         public GameObject senderGameObject;
-        public Collider colliderData;
+        public Collider collider;
     }
 }
