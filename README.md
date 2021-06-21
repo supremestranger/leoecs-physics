@@ -3,14 +3,16 @@ This is a simple Unity physics events emitter for Leopotam ECS framework.
 No more need to create MonoBehaviour scripts for physics events handling - just follow a few simple steps to do it with this tool.
 
 # Installation
-You can install this repository via `Package Manager -> Add package from git URL...`
+You can install this repository via Package Manager:
 
-Fill the opened field with
+`Package Manager -> Add package from git URL...`
+
+Fill the opened field with this line:
 ```
 https://github.com/supremestranger/leoecs-physics.git
 ```
 
-If you can't / don't want to use Package Manage or Git, you can just download the repository and add to your project.
+If you can't / don't want to use Package Manager or Git, you can just download the repository and add it to your project.
 
 # Checkers
 `Checker` is a `MonoBehaviour` script that contains a specific Unity physics event method.
