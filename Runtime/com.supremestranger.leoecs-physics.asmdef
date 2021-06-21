@@ -1,0 +1,16 @@
+{
+    "name": "com.supremestranger.leoecs-physics",
+    "rootNamespace": "",
+    "references": [
+        "GUID:656c2c43d3cfe4855bd40e058874b0be"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -2,15 +2,14 @@
   "name": "com.supremestranger.leoecs-physics",
   "author": "supremestranger",
   "displayName": "LeoECS Physics",
-  "description": "Simple Unity physics events emitter for LeoECS framework.",
+  "description": "Simple Unity physics events emitter for LEOECS framework.",
   "unity": "2019.1",
   "version": "1.0.0",
   "keywords": [
     "leoecs",
     "ecs",
     "performance",
-    "supremestranger",
-    "ecs-physics",
+    "physics",
     "leoecs-physics"
   ],
   "dependencies": {},

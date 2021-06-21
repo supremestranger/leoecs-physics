@@ -1,7 +1,10 @@
 ﻿using UnityEngine;
 
-public struct OnCollisionEnterEvent
+namespace LeoEcsPhysics
 {
-    public GameObject thisGO;
-    public GameObject otherGO;
+    public struct OnCollisionEnterEvent
+    {
+        public GameObject thisGO;
+        public GameObject otherGO;
+    }
 }
