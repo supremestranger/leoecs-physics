@@ -121,4 +121,4 @@ By the way, for `OnTrigger` and `OnControllerColliderHit` `CharacterController` 
 ### Some of my events being registered multiple times
 This cannot be fixed as the event methods are called with Unity Physics engine, so you need to think how to fix it on your side.
 
-You can try to create some kind of Timer that is started when the event is raised and not handle new events while the timer is running.
+You can try to create some kind of timer that is started when the event is raised and not handle new events while the timer is running.
