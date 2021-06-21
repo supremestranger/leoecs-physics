@@ -6,5 +6,6 @@ namespace LeoEcsPhysics
     {
         public GameObject thisGO;
         public GameObject otherGO;
+        public Collider colliderData;
     }
 }
