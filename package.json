@@ -1,0 +1,21 @@
+{
+  "name": "com.supremestranger.leoecs-physics",
+  "author": "Arthur",
+  "displayName": "LeoECS Physics",
+  "description": "Simple Unity physics events emitter for LeoECS framework.",
+  "unity": "2019.1",
+  "version": "1.0.0",
+  "keywords": [
+    "leoecs",
+    "ecs",
+    "performance",
+    "supremestranger",
+    "ecs-physics",
+    "leoecs-physics"
+  ],
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/supremestranger/leoecs-physics.git"
+  }
+}
