@@ -54,7 +54,7 @@ sealed class EcsStartup : MonoBehaviour
             .Init();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         ecsSystems?.Run ();
     }
