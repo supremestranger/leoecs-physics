@@ -29,11 +29,29 @@ You need to attach a concrete `Checker` to any `GameObject` that emits any Unity
 * `OnControllerColliderHitChecker` - responsible for `OnControllerColliderHit` (only for `Character Controller` objects) event
 
 # Events
-When some event is raised, it creates a new entity-event with a specific component like `OnCollisionEnterEvent` or `OnTriggerStayEvent`.
+When Unity Physics event is raised, the `EcsPhysicsEventsEmitter` creates a new entity-event with a specific component like `OnCollisionEnterEvent` or `OnTriggerStayEvent`.
 
-The component contains only two fields: 
-* `senderGameObject` - the one that has a `Checker` attached 
-* `collision`/`collider`/`hit` - the event data based on Unity API method.
+The component contains various amount on fields based on the event.
+
+### OnCollision
+```csharp
+public GameObject senderGameObject;
+public Collider collider;
+public ContactPoint firstContactPoint;
+public Vector3 relativeVelocity;
+```
+### OnTrigger
+```csharp
+public GameObject senderGameObject;
+public Collider collider;
+```
+### OnControllerColliderHit
+```csharp
+public GameObject senderGameObject;
+public Collider collider;
+public Vector3 hitNormal;
+```
+
 
 But before diving into handling all of this stuff, you need to initialize the `EcsPhysicsEventsEmitter` in your `Startup` script like this:
 
@@ -89,7 +107,7 @@ public class TestSystem : IEcsRunSystem
         {
             ref var eventData = ref filter2.Get1(i);
 
-            eventData.collisionData.gameObject.SetActive(false);
+            eventData.collider.gameObject.SetActive(false);
          }
     }
 }
