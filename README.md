@@ -55,7 +55,7 @@ public Vector3 moveDirection;
 ```
 
 
-But before diving into handling all of this stuff, you need to initialize the `EcsPhysicsEventsEmitter` in your `Startup` script like this:
+But before diving into handling all of this stuff, you need to initialize the `EcsPhysicsEvents` in your `Startup` script like this:
 
 ```csharp
 sealed class EcsStartup : MonoBehaviour
@@ -68,7 +68,7 @@ sealed class EcsStartup : MonoBehaviour
         ecsWorld = new EcsWorld ();
         ecsSystems = new EcsSystems (ecsWorld);
         // initialization of emitter.
-        EcsPhysicsEventsEmitter.ecsWorld = ecsWorld;
+        EcsPhysicsEvents.ecsWorld = ecsWorld;
             
         ecsSystems
             // your systems
@@ -86,7 +86,7 @@ sealed class EcsStartup : MonoBehaviour
         if (ecsSystems != null)
         {
             // don't forget to get rid of this reference.
-            EcsPhysicsEventsEmitter.ecsWorld = null;
+            EcsPhysicsEvents.ecsWorld = null;
             ecsSystems.Destroy();
             ecsSystems = null;
             ecsWorld.Destroy();
