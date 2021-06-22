@@ -6,7 +6,7 @@ namespace LeoEcsPhysics
     {
         private void OnTriggerExit(Collider other)
         {
-            EcsPhysicsEventsEmitter.RegisterTriggerExitEvent(gameObject, other);
+            EcsPhysicsEvents.RegisterTriggerExitEvent(gameObject, other);
         }
     }
 }

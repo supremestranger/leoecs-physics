@@ -6,7 +6,7 @@ namespace LeoEcsPhysics
     {
         private void OnCollisionStay(Collision other)
         {
-            EcsPhysicsEventsEmitter.RegisterCollisionStayEvent(gameObject, other.collider, other.GetContact(0), other.relativeVelocity);
+            EcsPhysicsEvents.RegisterCollisionStayEvent(gameObject, other.collider, other.GetContact(0), other.relativeVelocity);
         }
     }
 }
