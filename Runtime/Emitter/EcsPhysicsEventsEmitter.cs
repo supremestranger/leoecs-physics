@@ -63,13 +63,14 @@ namespace LeoEcsPhysics
             eventComponent.relativeVelocity = relativeVelocity;
         }
 
-        public static void RegisterControllerColliderHitEvent(GameObject senderGameObject, Collider collider, Vector3 hitNormal)
+        public static void RegisterControllerColliderHitEvent(GameObject senderGameObject, Collider collider, Vector3 hitNormal, Vector3 moveDirection)
         {
             var eventEntity = ecsWorld.NewEntity();
             ref var eventComponent = ref eventEntity.Get<OnControllerColliderHitEvent>();
             eventComponent.senderGameObject = senderGameObject;
             eventComponent.collider = collider;
             eventComponent.hitNormal = hitNormal;
+            eventComponent.moveDirection = moveDirection;
         }
     }
 }

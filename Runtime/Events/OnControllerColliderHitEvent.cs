@@ -7,5 +7,6 @@ namespace LeoEcsPhysics
         public GameObject senderGameObject;
         public Collider collider;
         public Vector3 hitNormal;
+        public Vector3 moveDirection;
     }
 }
