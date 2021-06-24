@@ -28,7 +28,7 @@ You need to attach a concrete `Checker` to any `GameObject` that emits any Unity
 * `OnCollisionExitChecker` - responsible for `OnCollisionExit` event
 * `OnControllerColliderHitChecker` - responsible for `OnControllerColliderHit` (only for `Character Controller` objects) event
 
-# Events
+## Events
 When Unity Physics event is raised, the `EcsPhysicsEvents` static class creates a new entity-event with a specific component like `OnCollisionEnterEvent` or `OnTriggerStayEvent`.
 
 The event component has various amount on fields based on the event.
