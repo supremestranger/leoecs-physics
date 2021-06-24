@@ -138,7 +138,7 @@ private void Start()
 ### I attached the Checker to GameObject, but it doesn't register any physics event
 Keep in mind that one of your `GameObjects` must have kinematic `Rigidbody` component attached.
 
-By the way, for `OnTrigger` and `OnControllerColliderHit` `CharacterController` component is OK.
+By the way, for `OnTrigger` and `OnControllerColliderHit` events the `CharacterController` component is fine.
 
 ### Some of my events being registered multiple times. For example, OnTriggerEnter
 This cannot be fixed as events raised by Unity Physics engine, so you need to think how to fix it on your side.
