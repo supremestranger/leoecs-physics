@@ -140,6 +140,9 @@ Keep in mind that one of your `GameObjects` must have kinematic `Rigidbody` comp
 
 By the way, for `OnTrigger` and `OnControllerColliderHit` events the `CharacterController` component is fine.
 
+![image](https://user-images.githubusercontent.com/37938234/124799257-0728d080-df5d-11eb-8ea8-68bd6bcabbda.png)
+
+
 ### Some of my events being registered multiple times. For example, OnTriggerEnter
 This cannot be fixed as events raised by Unity Physics engine, so you need to think how to fix it on your side.
 
