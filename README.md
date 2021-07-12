@@ -107,7 +107,7 @@ public class TestSystem : IEcsRunSystem
     {
         foreach (var i in filter)
         {
-            ref var eventData = ref filter2.Get1(i);
+            ref var eventData = ref filter.Get1(i);
 
             eventData.collider.gameObject.SetActive(false);
          }
