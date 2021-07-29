@@ -6,7 +6,7 @@ namespace LeoEcsPhysics
     {
         private void OnCollisionExit(Collision other)
         {
-            EcsPhysicsEvents.RegisterCollisionExitEvent(gameObject, other.collider, other.GetContact(0), other.relativeVelocity);
+            EcsPhysicsEvents.RegisterCollisionExitEvent(gameObject, other.collider, other.relativeVelocity);
         }
     }
 }

@@ -53,13 +53,12 @@ namespace LeoEcsPhysics
             eventComponent.relativeVelocity = relativeVelocity;
         }
 
-        public static void RegisterCollisionExitEvent(GameObject senderGameObject, Collider collider, ContactPoint firstContactPoint, Vector3 relativeVelocity)
+        public static void RegisterCollisionExitEvent(GameObject senderGameObject, Collider collider, Vector3 relativeVelocity)
         {
             var eventEntity = ecsWorld.NewEntity();
             ref var eventComponent = ref eventEntity.Get<OnCollisionExitEvent>();
             eventComponent.senderGameObject = senderGameObject;
             eventComponent.collider = collider;
-            eventComponent.firstContactPoint = firstContactPoint;
             eventComponent.relativeVelocity = relativeVelocity;
         }
 
@@ -71,6 +70,59 @@ namespace LeoEcsPhysics
             eventComponent.collider = collider;
             eventComponent.hitNormal = hitNormal;
             eventComponent.moveDirection = moveDirection;
+        }
+        
+        public static void RegisterCollisionEnter2DEvent(GameObject senderGameObject, Collider2D collider2D, ContactPoint2D firstContactPoint2D, Vector2 relativeVelocity)
+        {
+            var eventEntity = ecsWorld.NewEntity();
+            ref var eventComponent = ref eventEntity.Get<OnCollisionEnter2DEvent>();
+            eventComponent.senderGameObject = senderGameObject;
+            eventComponent.collider2D = collider2D;
+            eventComponent.firstContactPoint2D = firstContactPoint2D;
+            eventComponent.relativeVelocity = relativeVelocity;
+        }
+        
+        public static void RegisterCollisionStay2DEvent(GameObject senderGameObject, Collider2D collider2D, ContactPoint2D firstContactPoint2D, Vector2 relativeVelocity)
+        {
+            var eventEntity = ecsWorld.NewEntity();
+            ref var eventComponent = ref eventEntity.Get<OnCollisionStay2DEvent>();
+            eventComponent.senderGameObject = senderGameObject;
+            eventComponent.collider2D = collider2D;
+            eventComponent.firstContactPoint2D = firstContactPoint2D;
+            eventComponent.relativeVelocity = relativeVelocity;
+        }
+        
+        public static void RegisterCollisionExit2DEvent(GameObject senderGameObject, Collider2D collider2D, Vector2 relativeVelocity)
+        {
+            var eventEntity = ecsWorld.NewEntity();
+            ref var eventComponent = ref eventEntity.Get<OnCollisionExit2DEvent>();
+            eventComponent.senderGameObject = senderGameObject;
+            eventComponent.collider2D = collider2D;
+            eventComponent.relativeVelocity = relativeVelocity;
+        }
+        
+        public static void RegisterTriggerEnter2DEvent(GameObject senderGameObject, Collider2D collider2D)
+        {
+            var eventEntity = ecsWorld.NewEntity();
+            ref var eventComponent = ref eventEntity.Get<OnTriggerEnter2DEvent>();
+            eventComponent.senderGameObject = senderGameObject;
+            eventComponent.collider2D = collider2D;
+        }
+        
+        public static void RegisterTriggerStay2DEvent(GameObject senderGameObject, Collider2D collider2D)
+        {
+            var eventEntity = ecsWorld.NewEntity();
+            ref var eventComponent = ref eventEntity.Get<OnTriggerStay2DEvent>();
+            eventComponent.senderGameObject = senderGameObject;
+            eventComponent.collider2D = collider2D;
+        }
+        
+        public static void RegisterTriggerExit2DEvent(GameObject senderGameObject, Collider2D collider2D)
+        {
+            var eventEntity = ecsWorld.NewEntity();
+            ref var eventComponent = ref eventEntity.Get<OnTriggerExit2DEvent>();
+            eventComponent.senderGameObject = senderGameObject;
+            eventComponent.collider2D = collider2D;
         }
     }
 }
